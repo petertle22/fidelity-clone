@@ -12,5 +12,12 @@ export const routes: Routes = [
             import('./modules/customer-service/customer-service-routing.module').then(
                 (m) => m.CustomerServiceRoutingModule
             ),
+    },
+    {
+        path: 'profile',
+        loadChildren: () => 
+            import('./modules/profile/profile-routing.module').then(
+                (m) => m.ProfileRoutingModule
+            ),
     }
 ];
