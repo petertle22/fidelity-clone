@@ -19,5 +19,12 @@ export const routes: Routes = [
             import('./modules/profile/profile-routing.module').then(
                 (m) => m.ProfileRoutingModule
             ),
-    }
+    }, 
+    {
+        path: 'open-an-account',
+        loadChildren: () => 
+            import('./modules/open-an-account/open-an-account-routing.module').then(
+                (m) => m.OpenAnAccountRoutingModule
+            ),
+    },
 ];
