@@ -27,4 +27,11 @@ export const routes: Routes = [
                 (m) => m.OpenAnAccountRoutingModule
             ),
     },
+    {
+        path: 'virtual-assistant',
+        loadChildren: () => 
+            import('./modules/virtual-assistant/virtual-assistant-routing.module').then(
+                (m) => m.VirtualAssistantRoutingModule
+            ),
+    },
 ];
