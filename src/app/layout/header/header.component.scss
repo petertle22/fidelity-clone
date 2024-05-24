@@ -9,23 +9,16 @@
 
 
 .item {
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
 }
 
-.item:not(:first-child) {
-    margin-top: calc((25px - 12px) / 2);
-}
 
 .fidelitylogo {
     font-size: 2.75rem;
-    font-family: 'Roboto', sans-serif;
 }
 
 .modules {
     font-family: 'Roboto', sans-serif;
-    color: white;
 }
 
 a {
