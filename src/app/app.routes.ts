@@ -34,4 +34,11 @@ export const routes: Routes = [
                 (m) => m.VirtualAssistantRoutingModule
             ),
     },
+    {
+        path: 'account-trading',
+        loadChildren: () => 
+            import('./modules/account-trading/account-trading-routing.module').then(
+                (m) => m.AccountTradingRoutingModule
+            ),
+    },
 ];
