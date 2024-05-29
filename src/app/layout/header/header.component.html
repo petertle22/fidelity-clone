@@ -7,3 +7,52 @@
         <a class=            " item" routerLink="/virtual-assistant" routerLinkActive="active"> VIRTUAL ASSISTANT </a>
     </div>
 </div>
+
+<div class="container-for-dropdowns">
+    <div class="dropdown-container" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
+        <button class="dropdown-button">Accounts & Trade </button>
+        <div class="dropdown-menu" *ngIf="dropdownVisible">
+            <a class="box" href="#">Option 1</a>
+            <a class="box" href="#">Option 2</a>
+            <a class="box" href="#">Option 3</a>
+        </div>
+    </div>
+
+    <div class="dropdown-container" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
+        <button class="dropdown-button">Planning & Advice </button>
+        <div class="dropdown-menu" *ngIf="dropdownVisible">
+            <a class="box" href="#">Option 4</a>
+            <a class="box" href="#">Option 5</a>
+            <a class="box" href="#">Option 6</a>
+        </div>
+    </div>
+
+    <div class="dropdown-container" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
+        <button class="dropdown-button">News & Research </button>
+        <div class="dropdown-menu" *ngIf="dropdownVisible">
+            <a class="box" href="#">Option 7</a>
+            <a class="box" href="#">Option 8</a>
+            <a class="box" href="#">Option 9</a>
+        </div>
+    </div>
+
+    <div class="dropdown-container" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
+        <button class="dropdown-button"> Products & Services </button>
+        <div class="dropdown-menu" *ngIf="dropdownVisible">
+            <a class="box" href="#">Option 7</a>
+            <a class="box" href="#">Option 8</a>
+            <a class="box" href="#">Option 9</a>
+        </div>
+    </div>
+
+
+    <div class="dropdown-container" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
+        <button class="dropdown-button"> Why Fidelity </button>
+        <div class="dropdown-menu" *ngIf="dropdownVisible">
+            <a class="box" href="#">Option 7</a>
+            <a class="box" href="#">Option 8</a>
+            <a class="box" href="#">Option 9</a>
+        </div>
+    </div>
+
+</div>
