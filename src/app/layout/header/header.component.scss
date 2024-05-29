@@ -87,3 +87,12 @@ a:visited {
   .box {
     padding: 5px;
   }
+
+  @media (max-width: 850px) {
+    .container-for-dropdowns {
+        display: none;
+    }
+    .item {
+        display: none;
+    }
+  }
