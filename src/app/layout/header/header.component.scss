@@ -78,15 +78,16 @@ a:visited {
     background-color: rgb(191, 217, 145);
   }
 
+  .box {
+    padding: 5px;
+  }
+
   .container-for-dropdowns {
     display: flex;
     background-color: rgba(54,135,39,255);
     justify-content: space-between
   }
 
-  .box {
-    padding: 5px;
-  }
 
   @media (max-width: 850px) {
     .container-for-dropdowns {

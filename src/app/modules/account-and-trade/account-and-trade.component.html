@@ -1,0 +1,19 @@
+<div class="dropdown-container" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
+    <button class="dropdown-button">Accounts & Trade </button>
+    <div class="dropdown-menu" *ngIf="dropdownVisible">
+        <a class="box" routerLink="#"     (click) = "hideDropdown()"> Portfolio </a>
+        <a class="box" routerLink="#"     (click) =" hideDropdown()"> Account Positions </a>
+        <a class="box" routerLink="trade" (click) = "hideDropdown()"> Trade </a>
+        <a class="box" routerLink="#"     (click) = "hideDropdown()"> Trading Dashboard </a>
+        <a class="box" routerLink="#"     (click) = "hideDropdown()"> Active Trader Pro </a>
+        <a class="box" routerLink="#"     (click) = "hideDropdown()"> Transfer </a>
+        <a class="box" routerLink="#"     (click) = "hideDropdown()"> Cash Management </a>
+        <a class="box" routerLink="#"     (click) = "hideDropdown()"> Bill Pay </a>
+        <a class="box" routerLink="#"     (click) = "hideDropdown()"> Full View </a>
+        <a class="box" routerLink="#"     (click) = "hideDropdown()"> Security Settings </a>
+        <a class="box" routerLink="#"     (click) = "hideDropdown()"> Account Features </a>
+        <a class="box" routerLink="#"     (click) = "hideDropdown()"> Documents </a>
+        <a class="box" routerLink="#"     (click) = "hideDropdown()"> Tax Forms & Information </a>
+        <a class="box" routerLink="#"     (click) = "hideDropdown()"> Refer a Friend </a>
+    </div>
+</div>
