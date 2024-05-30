@@ -37,7 +37,7 @@ export const routes: Routes = [
     {
         path: 'trade',
         loadChildren: () => 
-            import('./modules/trade/trade-routing.module').then(
+            import('./modules/account-and-trade/trade/trade-routing.module').then(
                 (m) => m.TradeRoutingModule
             ),
     }
