@@ -45,43 +45,6 @@ a:visited {
     border: 1px solid black;
   }
   
-  .dropdown-button {
-    width: 100%;
-    height: 100%;
-    padding: 10px 50px;
-    background-color: rgba(54,135,39,255);
-    color: white;
-    cursor: pointer;
-  }
-  
-  .dropdown-menu {
-    width: 100%;
-    height: 500px;
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    padding: 5px;
-  }
-  
-  .dropdown-menu a {
-    display: block;
-    padding: 5px;//10px 20px;
-    text-decoration: none;
-    color: black;
-  }
-  
-  .dropdown-menu a:hover {
-    background-color: rgb(191, 217, 145);
-  }
-
-  .box {
-    padding: 5px;
-  }
-
   .container-for-dropdowns {
     display: flex;
     background-color: rgba(54,135,39,255);

@@ -1,4 +1,4 @@
-<div class="dropdown-container" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
+<div (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
     <button class="dropdown-button"> Why Fidelity </button>
     <div class="dropdown-menu" *ngIf="dropdownVisible">
         <a class="box" routerLink="#" (click)="hideDropdown()"> The Fidelity Advantage </a>
