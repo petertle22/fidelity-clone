@@ -23,37 +23,61 @@
   <input type="search" id="search" name="search" placeholder="Symbol" />
 </div>
 
-<div class="trade-banner">
-  <select name="Action">
-    <option>Action</option>
-    <option>Buy</option>
-    <option>Sell</option>
-  </select>
+<div class="action-quantity-order-day">
 
-  <input type="search" id="search" name="search" placeholder="Quantity" />
+  <div class="trade-subbanner">
+    <!-- Rounded switch -->
+    <label class="switch">
+      <input type="checkbox" />
+      <span class="slider round"></span>
 
-  <select name="Order type">
-    <option>Order type</option>
-    <option>Market</option>
-    <option>Limit</option>
-    <option>Conditional</option>
-    <option>Stop Loss</option>
-    <option>Stop Limit</option>
-    <option>Trailing Stop Loss ($)</option>
-    <option>Trailing Stop Loss (%)</option>
-    <option>Trailing Stop Limit ($)</option>
-    <option>Trailing Stop Limit (%)</option>
-  </select>
+        <div class="switch-text">
+          Extended hours trading: {{ isExtendedTradingHours() }} 
+          <div class="trading-deadlines">
+            Until 9:28 AM EST
+          </div>
+        </div>
+    </label>
+  </div>
 
-  <select name="Effective Until">
-    <option>Day</option>
-    <option>Good til</option>
-    <option>Canceled</option>
-    <option>Fill or Kill</option>
-    <option>Immediate or Cancel</option>
-    <option>On the Open</option>
-    <option>On the Close</option>
-  </select>
+  <div class="trade-subbanner">
+    <select name="Action">
+      <option>Action</option>
+      <option>Buy</option>
+      <option>Sell</option>
+    </select>
+
+    <input type="search" id="search" name="search" placeholder="Quantity" />
+
+    <select name="Order type">
+      <option>Order type</option>
+      <option>Market</option>
+      <option>Limit</option>
+      <option>Conditional</option>
+      <option>Stop Loss</option>
+      <option>Stop Limit</option>
+      <option>Trailing Stop Loss ($)</option>
+      <option>Trailing Stop Loss (%)</option>
+      <option>Trailing Stop Limit ($)</option>
+      <option>Trailing Stop Limit (%)</option>
+    </select>
+  </div>
+
+  <div class="trade-subbanner">
+
+    
+    <select name="Effective Until">
+      <option>Day</option>
+      <option>Good til</option>
+      <option>Canceled</option>
+      <option>Fill or Kill</option>
+      <option>Immediate or Cancel</option>
+      <option>On the Open</option>
+      <option>On the Close</option>
+    </select>
+
+  </div>
+  
 </div>
 
 <div class="estimated-order">
@@ -68,17 +92,3 @@
   </section>
 </div>
 
-  <!-- Rounded switch -->
-<label class="switch">
-  <input type="checkbox" />
-  <span class="slider round"></span>
-  
-    <div class="switch-text">
-      Extended hours trading: {{ isExtendedTradingHours() }} 
-      <div class="trading-deadlines">
-        Until 9:28 AM EST
-      </div>
-    </div>
-
-
-</label>
