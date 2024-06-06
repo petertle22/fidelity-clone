@@ -1,52 +1,76 @@
 <div class="trade-banner">
-    <p> Trade </p>
+  <p>Trade</p>
 </div>
 
 <div class="trade-banner">
-    <select name="Trade">
-        <option> Stocks/ETFs  </option>
-        <option> Options      </option>
-        <option> Mutual Funds </option>
-        <option> Crypto       </option>
-        <option> Fixed Income </option>
-        <option> Conditional  </option>
-        <option> Baskets      </option>
-    </select>
-    <select name="Select an account">
-        <option> Select an account  </option>
-        <option> Account 1      </option>
-        <option> Account 2 </option>
-    </select>
+  <select name="Trade">
+    <option>Stocks/ETFs</option>
+    <option>Options</option>
+    <option>Mutual Funds</option>
+    <option>Crypto</option>
+    <option>Fixed Income</option>
+    <option>Conditional</option>
+    <option>Baskets</option>
+  </select>
+  <select name="Select an account">
+    <option>Select an account</option>
+    <option>Account 1</option>
+    <option>Account 2</option>
+  </select>
 </div>
-
 
 <div class="trade-banner">
-    <input type="search" id="search" name="search" placeholder="Symbol">
-    <input type="submit" value="Search">
+  <input type="search" id="search" name="search" placeholder="Symbol" />
 </div>
-
 
 <div class="trade-banner">
-    <select name="Trade">
-        <option> Action  </option>
-        <option> Buy      </option>
-        <option> Sell </option>
-    </select>
+  <select name="Action">
+    <option>Action</option>
+    <option>Buy</option>
+    <option>Sell</option>
+  </select>
 
-    <input type="search" id="search" name="search" placeholder="Quantity">
-    <input type="submit" value="Search">
+  <input type="search" id="search" name="search" placeholder="Quantity" />
 
-    <select name="Order type">
-        <option> Order type  </option>
-        <option> Buy      </option>
-        <option> Sell </option>
-    </select>
+  <select name="Order type">
+    <option>Order type</option>
+    <option>Market</option>
+    <option>Limit</option>
+    <option>Conditional</option>
+    <option>Stop Loss</option>
+    <option>Stop Limit</option>
+    <option>Trailing Stop Loss ($)</option>
+    <option>Trailing Stop Loss (%)</option>
+    <option>Trailing Stop Limit ($)</option>
+    <option>Trailing Stop Limit (%)</option>
+  </select>
 
-    <br/>
-    <select name="Trade">
-        <option> Day  </option>
-        <option> Buy      </option>
-        <option> Sell </option>
-    </select>
-
+  <select name="Effective Until">
+    <option>Day</option>
+    <option>Good til</option>
+    <option>Canceled</option>
+    <option>Fill or Kill</option>
+    <option>Immediate or Cancel</option>
+    <option>On the Open</option>
+    <option>On the Close</option>
+  </select>
 </div>
+
+<div class="estimated-order">
+  <p>Estimated order value, including commission:</p>
+
+  <div class="order-due">
+    <p>${{ orderDue }}</p>
+  </div>
+
+  <section>
+    <button mat-raised-button class="custom-button">Preview order</button>
+  </section>
+</div>
+
+  <!-- Rounded switch -->
+<label class="switch">
+  <input type="checkbox" />
+  <span class="slider round"></span>
+  <p>Extended hours trading</p>
+</label>
