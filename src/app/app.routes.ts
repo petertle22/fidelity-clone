@@ -40,5 +40,12 @@ export const routes: Routes = [
             import('./modules/account-and-trade/trade/trade-routing.module').then(
                 (m) => m.TradeRoutingModule
             ),
+    },
+    {
+        path: 'portfolio',
+        loadChildren: () =>
+            import('./modules/account-and-trade/portfolio/portfolio-routing.module').then(
+                (m) => m.PortfolioRoutingModule
+            ),
     }
 ];

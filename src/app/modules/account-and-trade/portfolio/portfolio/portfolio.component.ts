@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent {
-
+  assetsUnderManagement: number = 69.69;
 }
