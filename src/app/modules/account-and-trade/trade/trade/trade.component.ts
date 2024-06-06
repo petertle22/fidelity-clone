@@ -12,8 +12,13 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class TradeComponent {
   orderDue: number = 69.69;
+  extendedTradingHours: boolean = false;
 
   getOrderDue(): string {
     return this.orderDue.toString();
   }
+
+  isExtendedTradingHours(): string {
+    return this.extendedTradingHours == true ? "On" : "Off";
+  } 
 }

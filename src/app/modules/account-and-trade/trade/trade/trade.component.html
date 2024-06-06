@@ -72,5 +72,13 @@
 <label class="switch">
   <input type="checkbox" />
   <span class="slider round"></span>
-  <p>Extended hours trading</p>
+  
+    <div class="switch-text">
+      Extended hours trading: {{ isExtendedTradingHours() }} 
+      <div class="trading-deadlines">
+        Until 9:28 AM EST
+      </div>
+    </div>
+
+
 </label>
