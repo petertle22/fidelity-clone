@@ -1,7 +1,7 @@
 <div  (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
     <button class="dropdown-button">Accounts & Trade </button>
     <div class="dropdown-menu" *ngIf="dropdownVisible">
-        <a class="box" routerLink="#"     (click) = "hideDropdown()"> Portfolio </a>
+        <a class="box" routerLink="portfolio"     (click) = "hideDropdown()"> Portfolio </a>
         <a class="box" routerLink="#"     (click) =" hideDropdown()"> Account Positions </a>
         <a class="box" routerLink="trade" (click) = "hideDropdown()"> Trade </a>
         <a class="box" routerLink="#"     (click) = "hideDropdown()"> Trading Dashboard </a>
