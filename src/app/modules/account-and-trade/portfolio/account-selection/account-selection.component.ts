@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Input } from '@angular/core'; 
 
 @Component({
   selector: 'app-account-selection',
@@ -9,9 +10,8 @@ import { Component } from '@angular/core';
 })
 export class AccountSelectionComponent {
 
-  constructor(private accountName: string, private assetsUnderManagement: number) {
-
-  }  
+  @Input() accountName: string = "";
+  @Input() assetsUnderManagement: number = 0.0;
 
   getAccountName(): string {
     return this.accountName;
