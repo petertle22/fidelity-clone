@@ -24,9 +24,6 @@ app.get("/trade", (req, res) => {
   const page = parseInt(req.query.page) || 0;
   const perPage = parseInt(req.query.perPage) || 10;
 
-  console.log(page);
-  console.log(perPage);
-
   fs.readFile("StockDatabase.json", "utf8", (err, data) => {
     if (err) {
       console.log(err);

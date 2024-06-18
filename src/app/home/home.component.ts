@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-home',
@@ -9,13 +8,4 @@ import { ProductsService } from '../services/products.service';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  constructor(private productsService: ProductsService) {}
-
-  ngOnInit() {
-    this.productsService
-      .getProducts('http://localhost:3000/trade', { page: 0, perPage: 5 })
-      .subscribe((products) => {
-        console.log(products.items);
-      });
-  }
 }

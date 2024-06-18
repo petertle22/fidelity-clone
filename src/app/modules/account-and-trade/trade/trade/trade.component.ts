@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
+import { ProductsService } from '../../../../services/products.service';
 
 @Component({
   selector: 'app-trade',
@@ -13,6 +14,19 @@ import { MatButtonModule } from '@angular/material/button';
 export class TradeComponent {
   orderDue: number = 69.69;
   extendedTradingHours: boolean = false;
+
+  constructor(private productService: ProductsService) {
+
+  }
+
+  ngOnInit() {
+    this.productService
+      .getProducts('http://localhost:3000/trade', { page: 0, perPage: 5 })
+      .subscribe((products) => {
+        console.log(products.items);
+      });
+  }
+
 
   getOrderDue(): string {
     return this.orderDue.toString();
