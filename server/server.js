@@ -24,10 +24,10 @@ app.get("/trade", (req, res) => {
   const page = parseInt(req.query.page) || 0;
   const perPage = parseInt(req.query.perPage) || 10;
 
-  Console.log(page);
-  Console.log(perPage);
+  console.log(page);
+  console.log(perPage);
 
-  fs.readFile("db.json", "utf8", (err, data) => {
+  fs.readFile("StockDatabase.json", "utf8", (err, data) => {
     if (err) {
       console.log(err);
       res.status(500).send("Internal Server Error");
