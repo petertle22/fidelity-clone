@@ -3,6 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { ProductsService } from '../../../../services/products.service';
+import { StockListing } from '../../../../../types';
 
 @Component({
   selector: 'app-trade',
@@ -14,17 +15,17 @@ import { ProductsService } from '../../../../services/products.service';
 export class TradeComponent {
   orderDue: number = 69.69;
   extendedTradingHours: boolean = false;
+  stockList: StockListing[] = [];
 
   constructor(private productService: ProductsService) {
 
-  }
-
-  ngOnInit() {
     this.productService
-      .getProducts('http://localhost:3000/trade', { page: 0, perPage: 5 })
-      .subscribe((products) => {
-        console.log(products.items);
-      });
+    .getProducts('http://localhost:3000/trade', { page: 0, perPage: 5 })
+    .subscribe((products) => {
+      console.log(products.items);
+      this.stockList = products.items;
+    });
+    console.log(this.stockList);
   }
 
 
