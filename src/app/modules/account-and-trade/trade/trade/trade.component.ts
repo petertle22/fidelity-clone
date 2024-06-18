@@ -3,7 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { ProductsService } from '../../../../services/products.service';
-import { StockListing } from '../../../../../types';
+import { StockListing, StockListings } from '../../../../../types';
 
 @Component({
   selector: 'app-trade',
@@ -21,11 +21,9 @@ export class TradeComponent {
 
     this.productService
     .getProducts('http://localhost:3000/trade', { page: 0, perPage: 5 })
-    .subscribe((products) => {
-      console.log(products.items);
+    .subscribe((products: StockListings) => {
       this.stockList = products.items;
     });
-    console.log(this.stockList);
   }
 
 
