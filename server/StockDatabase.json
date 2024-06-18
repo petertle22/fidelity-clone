@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "symbol": "APPL",
+      "company_name": "Apple"
+    },
+    {
+        "id": 2,
+        "symbol": "WM",
+        "company_name": "Waste Management"
+    },
+    {
+        "id": 3,
+        "symbol": "NVDA",
+        "company_name": "NVIDIA Corp"
+    },
+    {
+        "id": 4,
+        "symbol": "BRK.B",
+        "company_name": "Berkshire Hathaway Inc Class B"
+    },
+    {
+        "id": 5,
+        "symbol": "MCD",
+        "company_name": "McDonald's Corp"
+    }
+  ]
+}
