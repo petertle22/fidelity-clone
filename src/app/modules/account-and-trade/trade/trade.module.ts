@@ -11,7 +11,7 @@ import { TradeComponent } from './trade/trade.component';
   ],
   imports: [
     CommonModule,
-    TradeRoutingModule
+    TradeRoutingModule,
   ]
 })
 export class TradeModule { }
