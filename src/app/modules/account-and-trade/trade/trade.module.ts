@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 
 import { TradeRoutingModule } from './trade-routing.module';
 import { TradeComponent } from './trade/trade.component';
@@ -12,6 +13,7 @@ import { TradeComponent } from './trade/trade.component';
   imports: [
     CommonModule,
     TradeRoutingModule,
+    AutoCompleteModule,
   ]
 })
 export class TradeModule { }
