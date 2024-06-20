@@ -21,8 +21,8 @@
 
 <div class="trade-banner">
   <p-autoComplete
-    [(ngModel)]="value"
-    [suggestions]="filteredResults"
+    [(ngModel)]="tickerSymbolInput"
+    [suggestions]="tickerSymbolList"
     (completeMethod)="search($event)"
   ></p-autoComplete>
 </div>

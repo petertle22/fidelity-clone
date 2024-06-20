@@ -11,37 +11,51 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './trade.component.scss',
   imports: [AutoCompleteModule, FormsModule],
   standalone: true,
-  
 })
 export class TradeComponent {
   orderDue: number = 69.69;
   extendedTradingHours: boolean = false;
   stockList: StockListing[] = [];
 
-  value: string = "";
-  filteredResults: any[] = [];
-
-  search(event: any) {
-    console.log(this.value);
-    // Implement your search logic here
-    this.filteredResults = [];  // Example: set filteredResults based on the search logic
-  }
+  tickerSymbolInput: string = '';
+  tickerSymbolList: any[] = [];
 
   constructor(private productService: ProductsService) {
-
     this.productService
-    .getProducts('http://localhost:3000/trade', { page: 0, perPage: 5 })
-    .subscribe((products: StockListings) => {
-      this.stockList = products.items;
-    });
+      .getProducts('http://localhost:3000/trade', { page: 0, perPage: 5 })
+      .subscribe((products: StockListings) => {
+        this.stockList = products.items;
+        console.log(this.stockList);
+      });
+
+    this.tickerSymbolList = new Array<string>(this.stockList.length);
+
+    for (let i = 0; i < this.stockList.length; i++) {
+      this.tickerSymbolList[i] = this.stockList[i].symbol;
+    }
+    console.log('Here');
+    console.log(this.tickerSymbolList);
+    console.log('Here 2');
   }
 
+  search(event: any) {
+    const query = event.query;
+    // Implement your search logic here
+    this.tickerSymbolList = this.filterSymbols(query);
+  }
+
+  filterSymbols(query: string): string[] {
+    const symbols = this.tickerSymbolList; // Example symbols
+    return symbols.filter((symbol) =>
+      symbol.toLowerCase().includes(query.toLowerCase())
+    );
+  }
 
   getOrderDue(): string {
     return this.orderDue.toString();
   }
 
   isExtendedTradingHours(): string {
-    return this.extendedTradingHours == true ? "On" : "Off";
-  } 
+    return this.extendedTradingHours == true ? 'On' : 'Off';
+  }
 }
