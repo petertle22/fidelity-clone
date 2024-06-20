@@ -2,11 +2,15 @@ import { Component } from '@angular/core';
 import { ProductsService } from '../../../../services/products.service';
 import { StockListing, StockListings } from '../../../../../types';
 
+import { AutoCompleteModule } from 'primeng/autocomplete';
+
 @Component({
   selector: 'app-trade',
   templateUrl: './trade.component.html',
   styleUrl: './trade.component.scss',
-  standalone: false,
+  imports: [AutoCompleteModule],
+  standalone: true,
+  
 })
 export class TradeComponent {
   orderDue: number = 69.69;
