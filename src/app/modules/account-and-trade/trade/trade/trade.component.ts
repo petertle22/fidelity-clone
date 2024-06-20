@@ -25,17 +25,7 @@ export class TradeComponent {
       .getProducts('http://localhost:3000/trade', { page: 0, perPage: 5 })
       .subscribe((products: StockListings) => {
         this.stockList = products.items;
-        console.log(this.stockList);
       });
-
-    this.tickerSymbolList = new Array<string>(this.stockList.length);
-
-    for (let i = 0; i < this.stockList.length; i++) {
-      this.tickerSymbolList[i] = this.stockList[i].symbol;
-    }
-    console.log('Here');
-    console.log(this.tickerSymbolList);
-    console.log('Here 2');
   }
 
   search(event: any) {
@@ -45,7 +35,9 @@ export class TradeComponent {
   }
 
   filterSymbols(query: string): string[] {
-    const symbols = this.tickerSymbolList; // Example symbols
+    const symbols = this.stockList
+      .map((item) => ({ symbol: item.symbol }))
+      .map((item) => item.symbol);
     return symbols.filter((symbol) =>
       symbol.toLowerCase().includes(query.toLowerCase())
     );
