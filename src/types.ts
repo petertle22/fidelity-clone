@@ -49,3 +49,22 @@ export interface StockListings {
     perPage: number;
   }
   
+export interface InvestmentOption {
+  type: string;
+}
+
+export interface SecurityAccount {
+  accountName: string;
+}
+
+export interface SecurityTradingOption {
+  type: string;
+}
+  
+export interface SecurityOrderType {
+  type: string;
+}
+
+export interface ExpirationType {
+  expiration: string;
+}

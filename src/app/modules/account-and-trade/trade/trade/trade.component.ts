@@ -1,15 +1,24 @@
 import { Component } from '@angular/core';
 import { ProductsService } from '../../../../services/products.service';
-import { StockListing, StockListings } from '../../../../../types';
+import {
+  StockListing,
+  StockListings,
+  InvestmentOption,
+  SecurityAccount,
+  SecurityTradingOption,
+  SecurityOrderType,
+  ExpirationType
+} from '../../../../../types';
 
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { FormsModule } from '@angular/forms';
+import { DropdownModule } from 'primeng/dropdown';
 
 @Component({
   selector: 'app-trade',
   templateUrl: './trade.component.html',
   styleUrl: './trade.component.scss',
-  imports: [AutoCompleteModule, FormsModule],
+  imports: [AutoCompleteModule, FormsModule, DropdownModule],
   standalone: true,
 })
 export class TradeComponent {
@@ -19,6 +28,64 @@ export class TradeComponent {
 
   tickerSymbolInput: string = '';
   tickerSymbolList: any[] = [];
+
+  investmentOptions: InvestmentOption[] | undefined;
+  selectedInvestmentOption: InvestmentOption | undefined;
+
+  accountOptions: SecurityAccount[] | undefined;
+  selectedAccountOption: SecurityAccount | undefined;
+
+  securityTradingOptions: SecurityTradingOption[] | undefined;
+  selectedSecurityTradingOption: SecurityTradingOption | undefined;
+
+  securityOrderTypes: SecurityOrderType[] | undefined;
+  selectedSecurityOrderType: SecurityOrderType | undefined;
+
+
+  expirationTypes: ExpirationType[] | undefined;
+  selectedExpirationType: ExpirationType | undefined;
+
+
+  ngOnInit() {
+    this.investmentOptions = [
+      { type: 'Stock/ETFs' },
+      { type: 'Options' },
+      { type: 'Mutual Funds' },
+      { type: 'Crypto' },
+      { type: 'Fixed Income' },
+      { type: 'Conditional' },
+      { type: 'Baskets' },
+    ];
+
+    this.accountOptions = [
+      { accountName: 'Account 1' },
+      { accountName: 'Account 2' },
+    ];
+
+    this.securityTradingOptions = [{ type: 'Buy' }, { type: 'Sell' }];
+
+    this.securityOrderTypes = [
+      { type: "Market" },
+      { type: "Limit" },
+      { type: "Conditional" },
+      { type: "Stop Loss" },
+      { type: "Stop Limit" },
+      { type: "Trailing Stop Loss ($)" },
+      { type: "Trailing Stop Loss (%)" },
+      { type: "Trailing Stop Limit ($)" },
+      { type: "Trailing Stop Limit (%)" },
+    ];
+
+    this.expirationTypes = [
+      { expiration: "Day" },
+      { expiration: "Good til" },
+      { expiration: "Canceled" },
+      { expiration: "Fill or Kill" },
+      { expiration: "Immediate or Cancel" },
+      { expiration: "On the Open" },
+      { expiration: "On the Close" },
+    ];
+  }
 
   constructor(private productService: ProductsService) {
     this.productService

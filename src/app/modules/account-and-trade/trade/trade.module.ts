@@ -5,6 +5,7 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { TradeRoutingModule } from './trade-routing.module';
 import { TradeComponent } from './trade/trade.component';
 import { FormsModule } from '@angular/forms';
+import { DropdownModule } from 'primeng/dropdown';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     TradeRoutingModule,
     AutoCompleteModule,
-    FormsModule
+    FormsModule,
+    DropdownModule
   ]
 })
 export class TradeModule { }

@@ -3,20 +3,19 @@
 </div>
 
 <div class="trade-banner">
-  <select name="Trade">
-    <option>Stocks/ETFs</option>
-    <option>Options</option>
-    <option>Mutual Funds</option>
-    <option>Crypto</option>
-    <option>Fixed Income</option>
-    <option>Conditional</option>
-    <option>Baskets</option>
-  </select>
-  <select name="Select an account">
-    <option>Select an account</option>
-    <option>Account 1</option>
-    <option>Account 2</option>
-  </select>
+  <p-dropdown
+    [options]="investmentOptions"
+    [(ngModel)] = "selectedInvestmentOption"
+    optionLabel="type"
+    placeholder="Stocks/ETFs"
+  ></p-dropdown>
+
+  <p-dropdown
+    [options]="accountOptions"
+    [(ngModel)]="selectedAccountOption"
+    optionLabel="accountName"
+    placeholder="Select an account"
+  ></p-dropdown>
 </div>
 
 <div class="trade-banner">
@@ -42,38 +41,31 @@
   </div>
 
   <div class="trade-subbanner">
-    <select name="Action">
-      <option>Action</option>
-      <option>Buy</option>
-      <option>Sell</option>
-    </select>
+    <p-dropdown
+      [(ngModel)]="selectedSecurityTradingOption"
+      [options] = "securityTradingOptions"
+      optionLabel="type"
+      placeholder="Actions"
+    ></p-dropdown>
 
     <input type="search" id="search" name="search" placeholder="Quantity" />
 
-    <select name="Order type">
-      <option>Order type</option>
-      <option>Market</option>
-      <option>Limit</option>
-      <option>Conditional</option>
-      <option>Stop Loss</option>
-      <option>Stop Limit</option>
-      <option>Trailing Stop Loss ($)</option>
-      <option>Trailing Stop Loss (%)</option>
-      <option>Trailing Stop Limit ($)</option>
-      <option>Trailing Stop Limit (%)</option>
-    </select>
+    <p-dropdown
+      [(ngModel)]="selectedSecurityOrderType"
+      [options]="securityOrderTypes"
+      optionLabel="type"
+      placeholder="Order type"
+    ></p-dropdown>
+
   </div>
 
   <div class="trade-subbanner">
-    <select name="Effective Until">
-      <option>Day</option>
-      <option>Good til</option>
-      <option>Canceled</option>
-      <option>Fill or Kill</option>
-      <option>Immediate or Cancel</option>
-      <option>On the Open</option>
-      <option>On the Close</option>
-    </select>
+    <p-dropdown
+      [(ngModel)]="selectedExpirationType"
+      [options]="expirationTypes"
+      optionLabel="expiration"
+      placeholder="Effective Until"
+    ></p-dropdown>
   </div>
 </div>
 
