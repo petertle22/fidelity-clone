@@ -44,6 +44,22 @@ select option:hover {
   background-color: rgba(54, 135, 39, 255);
 }
 
+::ng-deep .order-type-dropdown .p-dropdown {
+  width: 225px; /* Set a fixed width for the dropdown box */
+}
+
+::ng-deep .order-type-dropdown .p-dropdown-panel {
+  width: 100% !important; /* Make the dropdown panel match the width of the dropdown box */
+}
+
+::ng-deep .effective-until-dropdown .p-dropdown {
+  width: 225px;
+}
+
+::ng-deep .effective-until-dropdown .p-dropdown-panel {
+  width: 100% !important;
+}
+
 input {
   width: 200px;
   height: 40px;
