@@ -7,20 +7,22 @@ import {
   SecurityAccount,
   SecurityTradingOption,
   SecurityOrderType,
-  ExpirationType
+  ExpirationType,
 } from '../../../../../types';
 
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { FormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
   selector: 'app-trade',
   templateUrl: './trade.component.html',
   styleUrl: './trade.component.scss',
-  imports: [AutoCompleteModule, FormsModule, DropdownModule],
+  imports: [AutoCompleteModule, FormsModule, DropdownModule, InputTextModule],
   standalone: true,
 })
+
 export class TradeComponent {
   orderDue: number = 69.69;
   extendedTradingHours: boolean = false;
@@ -41,10 +43,8 @@ export class TradeComponent {
   securityOrderTypes: SecurityOrderType[] | undefined;
   selectedSecurityOrderType: SecurityOrderType | undefined;
 
-
   expirationTypes: ExpirationType[] | undefined;
   selectedExpirationType: ExpirationType | undefined;
-
 
   ngOnInit() {
     this.investmentOptions = [
@@ -65,25 +65,25 @@ export class TradeComponent {
     this.securityTradingOptions = [{ type: 'Buy' }, { type: 'Sell' }];
 
     this.securityOrderTypes = [
-      { type: "Market" },
-      { type: "Limit" },
-      { type: "Conditional" },
-      { type: "Stop Loss" },
-      { type: "Stop Limit" },
-      { type: "Trailing Stop Loss ($)" },
-      { type: "Trailing Stop Loss (%)" },
-      { type: "Trailing Stop Limit ($)" },
-      { type: "Trailing Stop Limit (%)" },
+      { type: 'Market' },
+      { type: 'Limit' },
+      { type: 'Conditional' },
+      { type: 'Stop Loss' },
+      { type: 'Stop Limit' },
+      { type: 'Trailing Stop Loss ($)' },
+      { type: 'Trailing Stop Loss (%)' },
+      { type: 'Trailing Stop Limit ($)' },
+      { type: 'Trailing Stop Limit (%)' },
     ];
 
     this.expirationTypes = [
-      { expiration: "Day" },
-      { expiration: "Good til" },
-      { expiration: "Canceled" },
-      { expiration: "Fill or Kill" },
-      { expiration: "Immediate or Cancel" },
-      { expiration: "On the Open" },
-      { expiration: "On the Close" },
+      { expiration: 'Day' },
+      { expiration: 'Good til' },
+      { expiration: 'Canceled' },
+      { expiration: 'Fill or Kill' },
+      { expiration: 'Immediate or Cancel' },
+      { expiration: 'On the Open' },
+      { expiration: 'On the Close' },
     ];
   }
 

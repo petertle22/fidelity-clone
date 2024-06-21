@@ -44,6 +44,10 @@ select option:hover {
   background-color: rgba(54, 135, 39, 255);
 }
 
+::ng-deep .margin-05 {
+  margin-right: 10px;
+}
+
 ::ng-deep .order-type-dropdown .p-dropdown {
   width: 225px; /* Set a fixed width for the dropdown box */
 }
