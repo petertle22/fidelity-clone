@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-trade',
@@ -26,6 +27,7 @@ import { FloatLabelModule } from 'primeng/floatlabel';
     DropdownModule,
     InputTextModule,
     FloatLabelModule,
+    ButtonModule,
   ],
   standalone: true,
 })

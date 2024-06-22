@@ -7,6 +7,7 @@ import { TradeComponent } from './trade/trade.component';
 import { FormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
 import { FloatLabelModule } from 'primeng/floatlabel';
+import { ButtonModule } from 'primeng/button';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { FloatLabelModule } from 'primeng/floatlabel';
     AutoCompleteModule,
     FormsModule,
     DropdownModule,
-    FloatLabelModule
+    FloatLabelModule,
+    ButtonModule,
   ]
 })
 export class TradeModule { }
