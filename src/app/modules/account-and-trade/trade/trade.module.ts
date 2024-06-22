@@ -6,6 +6,7 @@ import { TradeRoutingModule } from './trade-routing.module';
 import { TradeComponent } from './trade/trade.component';
 import { FormsModule } from '@angular/forms';
 import { DropdownModule } from 'primeng/dropdown';
+import { FloatLabelModule } from 'primeng/floatlabel';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { DropdownModule } from 'primeng/dropdown';
     TradeRoutingModule,
     AutoCompleteModule,
     FormsModule,
-    DropdownModule
+    DropdownModule,
+    FloatLabelModule
   ]
 })
 export class TradeModule { }

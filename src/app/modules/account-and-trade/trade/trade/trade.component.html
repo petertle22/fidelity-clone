@@ -24,6 +24,7 @@
     [(ngModel)]="tickerSymbolInput"
     [suggestions]="tickerSymbolList"
     (completeMethod)="search($event)"
+    placeholder="Symbol"
   ></p-autoComplete>
 </div>
 
@@ -50,7 +51,12 @@
       class="margin-05"
     ></p-dropdown>
 
-    <input type="search" id="search" name="search" placeholder="Quantity" />
+    <p-floatLabel>
+      <input type="text" pInputText [(ngModel)]="quantityValue" class="quantity-field"/>
+      <label for="quantity">Quantity</label>
+    </p-floatLabel>
+    
+    
 
     <p-dropdown
       [(ngModel)]="selectedSecurityOrderType"
