@@ -128,15 +128,20 @@ export class TradeComponent {
     return this.extendedTradingHours == true ? 'On' : 'Off';
   }
 
+  areInvestmentOrderFieldsValid(): boolean {
+    return (this.selectedAccountOption         == undefined ||
+            this.tickerSymbolInput             == undefined ||
+            this.selectedSecurityTradingOption == undefined ||
+            this.selectedSecurityOrderType     == undefined ||
+            this.selectedExpirationType        == undefined ||
+            this.quantityValue                 == undefined);
+  }
+
   previewOrder(): void {
-    if (
-      this.selectedAccountOption == undefined ||
-      this.tickerSymbolInput == undefined ||
-      this.selectedSecurityTradingOption == undefined ||
-      this.selectedSecurityOrderType == undefined ||
-      this.selectedExpirationType == undefined
-    ) {
+    if (!this.areInvestmentOrderFieldsValid()) {
       console.log("Required input field is undefined");
+      return;
     }
+
   }
 }
