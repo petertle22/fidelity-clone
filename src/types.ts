@@ -68,3 +68,12 @@ export interface SecurityOrderType {
 export interface ExpirationType {
   expiration: string;
 }
+
+export interface SecurityOrder {
+  selectedAccountOption: string;
+  tickerSymbol:          string;
+  securityTradingOption: string;
+  securityOrderType:     string;
+  expirationType:        string;
+  quantityalue:          string;
+}
