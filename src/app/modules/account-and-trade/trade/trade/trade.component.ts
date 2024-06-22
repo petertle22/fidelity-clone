@@ -36,7 +36,7 @@ export class TradeComponent {
   extendedTradingHours: boolean = false;
   stockList: StockListing[] = [];
 
-  tickerSymbolInput: string = '';
+  tickerSymbolInput: string | undefined;
   tickerSymbolList: any[] = [];
 
   investmentOptions: InvestmentOption[] | undefined;
@@ -126,5 +126,17 @@ export class TradeComponent {
 
   isExtendedTradingHours(): string {
     return this.extendedTradingHours == true ? 'On' : 'Off';
+  }
+
+  previewOrder(): void {
+    if (
+      this.selectedAccountOption == undefined ||
+      this.tickerSymbolInput == undefined ||
+      this.selectedSecurityTradingOption == undefined ||
+      this.selectedSecurityOrderType == undefined ||
+      this.selectedExpirationType == undefined
+    ) {
+      console.log("Required input field is undefined");
+    }
   }
 }
