@@ -48,6 +48,12 @@ app.get("/trade", (req, res) => {
   });
 });
 
+
+app.post('trade', (req, res) => {
+  console.log(req.body);
+});
+
+
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });

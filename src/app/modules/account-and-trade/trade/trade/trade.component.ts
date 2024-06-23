@@ -41,21 +41,21 @@ export class TradeComponent {
   tickerSymbolList: any[] = [];
 
   investmentOptions: InvestmentOption[] | undefined;
-  selectedInvestmentOption: InvestmentOption | undefined;
+  selectedInvestmentOption: InvestmentOption = { type: '' };
 
   accountOptions: SecurityAccount[] | undefined;
-  selectedAccountOption: SecurityAccount | undefined;
+  selectedAccountOption: SecurityAccount = { accountName: '' };
 
   securityTradingOptions: SecurityTradingOption[] | undefined;
-  selectedSecurityTradingOption: SecurityTradingOption | undefined;
+  selectedSecurityTradingOption: SecurityTradingOption = { type: '' };
 
   securityOrderTypes: SecurityOrderType[] | undefined;
-  selectedSecurityOrderType: SecurityOrderType | undefined;
+  selectedSecurityOrderType: SecurityOrderType = { type: '' };
 
   expirationTypes: ExpirationType[] | undefined;
-  selectedExpirationType: ExpirationType | undefined;
+  selectedExpirationType: ExpirationType = { expiration: '' };
 
-  quantityValue: string | undefined;
+  quantityValue: string = '';
 
   ngOnInit() {
     this.investmentOptions = [
@@ -129,29 +129,29 @@ export class TradeComponent {
     return this.extendedTradingHours == true ? 'On' : 'Off';
   }
 
-  areInvestmentOrderFieldsValid(): boolean {
+  areInvestmentOrderFieldsInvalid(): boolean {
     return (
-      this.selectedAccountOption == undefined ||
-      this.tickerSymbolInput == undefined ||
-      this.selectedSecurityTradingOption == undefined ||
-      this.selectedSecurityOrderType == undefined ||
-      this.selectedExpirationType == undefined ||
-      this.quantityValue == undefined
+      this.selectedAccountOption.accountName  == '' ||
+      this.tickerSymbolInput                  == '' ||
+      this.selectedSecurityTradingOption.type == '' ||
+      this.selectedSecurityOrderType.type     == '' ||
+      this.selectedExpirationType.expiration  == '' ||
+      this.quantityValue == ''
     );
   }
 
   previewOrder(): void {
-    if (!this.areInvestmentOrderFieldsValid()) {
+    if (this.areInvestmentOrderFieldsInvalid()) {
       console.log('Required input field is undefined');
       return;
     }
 
     const order: SecurityOrder = {
-      selectedAccountOption: String(this.selectedAccountOption),
+      selectedAccountOption: String(this.selectedAccountOption.accountName),
       tickerSymbol: String(this.tickerSymbolInput),
-      securityTradingOption: String(this.selectedSecurityTradingOption),
-      securityOrderType: String(this.selectedSecurityOrderType),
-      expirationType: String(this.selectedExpirationType),
+      securityTradingOption: String(this.selectedSecurityTradingOption.type),
+      securityOrderType: String(this.selectedSecurityOrderType?.type),
+      expirationType: String(this.selectedExpirationType.expiration),
       quantityalue: String(this.quantityValue), // Assuming this is correct. Otherwise, use quantityValue if it's a typo.
     };
 
