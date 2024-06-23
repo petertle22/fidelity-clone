@@ -49,8 +49,8 @@ app.get("/trade", (req, res) => {
 });
 
 
-app.post('trade', (req, res) => {
-  console.log(req.body);
+app.post('/trade', (req, res) => {
+  console.log("Here");
 });
 
 
