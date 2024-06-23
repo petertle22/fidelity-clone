@@ -8,6 +8,7 @@ import {
   SecurityTradingOption,
   SecurityOrderType,
   ExpirationType,
+  SecurityOrder,
 } from '../../../../../types';
 
 import { AutoCompleteModule } from 'primeng/autocomplete';
@@ -129,19 +130,34 @@ export class TradeComponent {
   }
 
   areInvestmentOrderFieldsValid(): boolean {
-    return (this.selectedAccountOption         == undefined ||
-            this.tickerSymbolInput             == undefined ||
-            this.selectedSecurityTradingOption == undefined ||
-            this.selectedSecurityOrderType     == undefined ||
-            this.selectedExpirationType        == undefined ||
-            this.quantityValue                 == undefined);
+    return (
+      this.selectedAccountOption == undefined ||
+      this.tickerSymbolInput == undefined ||
+      this.selectedSecurityTradingOption == undefined ||
+      this.selectedSecurityOrderType == undefined ||
+      this.selectedExpirationType == undefined ||
+      this.quantityValue == undefined
+    );
   }
 
   previewOrder(): void {
     if (!this.areInvestmentOrderFieldsValid()) {
-      console.log("Required input field is undefined");
+      console.log('Required input field is undefined');
       return;
     }
 
+    const order: SecurityOrder = {
+      selectedAccountOption: String(this.selectedAccountOption),
+      tickerSymbol: String(this.tickerSymbolInput),
+      securityTradingOption: String(this.selectedSecurityTradingOption),
+      securityOrderType: String(this.selectedSecurityOrderType),
+      expirationType: String(this.selectedExpirationType),
+      quantityalue: String(this.quantityValue), // Assuming this is correct. Otherwise, use quantityValue if it's a typo.
+    };
+
+    this.productService.sendInvestmentOrder(
+      'http://localhost:3000/trade',
+      order
+    );
   }
 }

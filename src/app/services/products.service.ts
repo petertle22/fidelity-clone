@@ -17,4 +17,8 @@ export class ProductsService {
       params,
     });
   };
+
+  sendInvestmentOrder = (url: string, body: any): Observable<any> => {
+    return this.apiService.post(url, body, {});
+  };
 }
