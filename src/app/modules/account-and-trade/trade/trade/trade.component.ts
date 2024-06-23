@@ -148,12 +148,14 @@ export class TradeComponent {
 
     const order: SecurityOrder = {
       selectedAccountOption: String(this.selectedAccountOption.accountName),
-      tickerSymbol: String(this.tickerSymbolInput),
+      tickerSymbol:          String(this.tickerSymbolInput),
       securityTradingOption: String(this.selectedSecurityTradingOption.type),
-      securityOrderType: String(this.selectedSecurityOrderType?.type),
-      expirationType: String(this.selectedExpirationType.expiration),
-      quantityalue: String(this.quantityValue), // Assuming this is correct. Otherwise, use quantityValue if it's a typo.
+      securityOrderType:     String(this.selectedSecurityOrderType?.type),
+      expirationType:        String(this.selectedExpirationType.expiration),
+      quantityalue:          String(this.quantityValue), // Assuming this is correct. Otherwise, use quantityValue if it's a typo.
     };
+
+    console.log("Sending over order via HTTP request");
 
     this.productService.sendInvestmentOrder(
       'http://localhost:3000/trade',
